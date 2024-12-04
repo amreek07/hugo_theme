@@ -1,0 +1,129 @@
+{{ define "header_css" }}
+<style>
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: 450px; 
+    background-image: url('{{ .Params.heroBackground }}');
+    background-position: center center; 
+    padding: 20px;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+  @media (max-width: 900px) {
+    .hero-image {
+      height: 300px;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 900px) {
+    .hero-image {
+      height: 350px; 
+    }
+  }
+  @media (max-width: 768px) {
+    .hero-image {
+      height: 300px; 
+    }
+  }
+  @media (min-width: 390px) and (max-width: 844px) and (min-height: 390px) and (max-height: 844px) {
+    .hero-image {
+      height: 182px; 
+    }
+}
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+  }
+  .row {
+    width: 100%;
+  }
+  .col-md-8, .col-md-4 {
+    padding: 20px;
+  }
+  .col-md-8 {
+    flex: 0 0 60%; 
+  }
+  .col-md-4 {
+    flex: 0 0 80%; 
+    margin-left: auto; 
+    padding-left: 30px; 
+  }
+  @media (max-width: 768px) {
+    .col-md-8, .col-md-4 {
+      flex: 0 0 100%;
+      padding-left: 15px; 
+      margin-left: 0; 
+    }
+  }
+  .contact-form .form-group {
+    margin-bottom: 15px;
+  }
+  .contact-form label {
+    display: block;
+    font-weight: normal; 
+    color: black; 
+  }
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc; 
+    background-color: #ffffff; 
+    color: black; 
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: black;; 
+    font-weight: normal; 
+    opacity: 1; 
+  }
+  .btn-primary {
+    background-color: black; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+{{ end }}
+
+{{ define "body_classes" }}page-contact{{ end }}
+{{ define "header_classes" }}{{ end }}
+{{ define "main" }}
+{{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" . "padding" .Params.heroPadding "top" .Params.heroTop) }}
+<div class="intro intro-small">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      {{ if eq .Site.Language.Lang "en" }}
+  {{ partial "kontaktFormEn.html" . }}
+{{ else }}
+  {{ partial "kontaktFormDe.html" . }}
+{{ end }}  
+    </div>
+    <div class="col-md-4">
+      {{ if eq .Site.Language.Lang "en" }}
+  {{ partial "contactCardEn.html" . }}
+{{ else }}
+  {{ partial "contactCard.html" . }}
+{{ end }}  
+    </div>
+  </div>
+</div>
+{{ end }}

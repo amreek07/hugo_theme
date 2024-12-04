@@ -1,0 +1,59 @@
+{{ define "header_css" }}
+{{ partial "jetztAnfragen.html" }}
+{{ end }}
+{{ define "body_classes" }}page-services-single{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+<!-- Hero image and description with Jetzt anfragen button integrated directly -->
+<div id="hero" class="hero-image hero-image-setheight" style="background-image: url('{{ .Params.heroBackground | relURL }}'); position: relative;">
+    <div class="container">
+        <div class="hero-text">
+            <span class="hero-section">{{ .Params.Section }}</span>
+            <h1>{{ .Params.heroHeading }}</h1>
+            <p style="display: inline-block;">{{ .Params.heroSubHeading }}</p>
+            <!-- Jetzt anfragen button adjusted to be lower -->
+            <!-- Check if the language is English -->
+            {{ if eq .Site.Language.Lang "en" }}
+            <a href="/en/contact/us" class="btn">Request Now</a>
+          {{ else }}
+            <a href="/contact/us" class="btn">Jetzt Anfragen</a>
+          {{ end }}
+        </div>
+  </div>
+ </div>
+
+  <div class="container pt-4 pt-md-10 pb-4 pb-md-10">
+    <div class="row align-items-center">
+    
+      <!-- Main Service Content -->
+      <div class="col-12 col-md-8 service-single d-flex flex-column align-items-center">
+        <div class="content">{{ .Content }}</div>
+    </div>
+   
+  
+  
+        <div class="col-12 col-md-6 contact-card-container">
+                  {{ if eq .Site.Language.Lang "en" }}
+              {{ partial "kaiContactCardOfferingEN.html" . }}
+             {{ else }}
+                {{ partial "kaiContactCardOfferingDE.html" . }}
+                 {{ end }}
+           </div>
+          
+        </div>
+      </div>
+{{ end }}
+
+
+
+{{ define "footer_js" }}
+{{ $library := resources.Get "js/libs/library.js" }}
+{{ $services := resources.Get "js/pages/services.js" }}
+{{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
+{{ if hugo.IsServer }}
+  <script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+{{ else }}
+  <script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+{{ end }}
+{{ end }}

@@ -1,0 +1,77 @@
+<h2 class="big-title" style="margin-top: 55px;">Our Credentials</h2>
+
+<div class="wrapper-slider">
+    <div class="slider-buttons">
+        <i id="left" class="fa-solid fa-angle-left">&lt;</i>
+    </div>
+    <div class="carousel">
+        {{ range where .Site.RegularPages "Section" "reference" }}
+        <div class="reference-card">
+            <a href="{{ .Permalink }}">
+                {{ $pageContext := . }} <!-- Store the current context (page context) -->
+                {{ with .Params.image }}
+                <img src="{{ . | absURL }}" alt="{{ $pageContext.Title }}" class="background"> <!-- Use the stored context -->
+                {{ end }}
+                <div class="reference-info">
+                    <div class="title-card">
+                    <h3>{{ .Title }}</h3>
+                    </div>
+                        <div class="tags-logo-box">
+                        <div class="tags">
+                            {{ range .Params.tags }}
+                            <span class="tag">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        <div class="logoImage"><img src="{{ .Params.logoImage }}"  alt="Logo"></div>
+                    </div>
+                    <p>{{ .Params.preview | truncate 300}}</p>
+                    {{ if .Params.service }}
+                        <p> <a href="{{ .Params.service }}" > Link to fwdnow service</a> </p>
+                    {{end}}
+                </div>
+            </a>
+        </div>
+        {{ end }}
+    </div>
+    <div class="slider-buttons">
+        <i id="right" class="fa-solid fa-angle-right">&gt;</i>
+    </div>
+</div>
+
+<script>
+    function stringToColor(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            hash = str.charCodeAt(i) + ((hash << 5) - hash);
+        }
+
+        // Creating a color
+        let color = '#';
+        for (let i = 0; i < 3; i++) {
+            let value = (hash >> (i * 7)) & 0xFF;
+            color += ('00' + value.toString(16)).substr(-2);
+        }
+        return color;
+    }
+
+    document.addEventListener("DOMContentLoaded", function(){
+        const tags = document.querySelectorAll(".tag");
+        tags.forEach(tag => {
+                tag.style.backgroundColor = stringToColor(tag.textContent.trim());
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+      const carousel = document.querySelector(".carousel");
+      const btnLeft = document.getElementById("left");
+      const btnRight = document.getElementById("right");
+
+      btnLeft.addEventListener("click", function() {
+        carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
+      });
+
+      btnRight.addEventListener("click", function() {
+        carousel.scrollBy({ left: carousel.offsetWidth, behavior: 'smooth' });
+      });
+    });
+</script>
+

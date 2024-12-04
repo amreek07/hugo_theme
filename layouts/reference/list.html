@@ -1,0 +1,23 @@
+{{ define "header_css" }}
+{{ end }}
+
+{{ define "main" }}
+
+<!-- Include the contact bar partial -->
+{{ if eq .Site.Language.Lang "en" }}
+  {{ partial "contactBarEn.html" . }}
+{{ else }}
+  {{ partial "contactBar.html" . }}
+{{ end }}
+
+<!-- Remaining page content, such as a list of services -->
+
+<div class="reference-grid">
+      
+  {{ partial "slider.html" . }}
+</div>
+
+{{ end }}
+
+{{ define "footer_js" }}
+{{ end }}

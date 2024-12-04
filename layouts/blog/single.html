@@ -1,0 +1,92 @@
+{{ define "header_css" }}
+{{ partial "jetztAnfragenMehrinfo.html" }}
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0DPXZZZMJ"></script>
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-D0DPXZZZMJ'); </script>
+    
+<script>
+function gtag_report_conversion(url) {
+   var callback = function () {
+     if (typeof(url) != 'undefined') {
+       window.location = url;
+     }
+   };
+   gtag('event', 'conversion', {
+     'send_to': 'AW-16690409850/yM3OCMGb3OAZEPrizZY-',
+     'event_callback': callback
+   });
+   return false;
+ }
+</script>
+{{ end }}
+
+{{ define "body_classes" }}page-services-single{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+<!-- Hero image and description with button container for proper spacing -->
+<div id="hero" class="hero-image hero-image-setheight" style="background-image: url('{{ .Params.heroBackground | relURL }}'); position: relative;">
+    <div class="container">
+        <div class="hero-text">
+            <span class="hero-section">{{ .Params.Section }}</span>
+            <h1>{{ .Params.heroHeading }}</h1>
+            <p style="display: inline-block;">{{ .Params.heroSubHeading }}</p>
+            <div class="btn-container">
+                {{ $baseFileName := .File.BaseFileName }}
+                {{ $baseFileName := .File.BaseFileName }}
+                {{ if eq .Site.Language.Lang "en" }}
+                    {{ if eq $baseFileName "EnterpriseArchitectureRepositories.en" }}
+                        <a href="/en/services/eam" class="btn">More Information</a>
+                    {{ else if eq $baseFileName "Finops.en" }}
+                        <a href="/en/services/finops" class="btn">More Information</a>
+                    {{ end }}
+                    <!-- Moved "Request now" button inside the first if -->
+                    <a href="/en/contact/us" class="btn">Request now</a>
+                
+                {{ else }}
+                    {{ if eq $baseFileName "EnterpriseArchitectureRepositories.de" }}
+                        <a href="/services/eam" class="btn">Mehr Informationen</a>
+                    {{ else if eq $baseFileName "Finops.de" }}
+                        <a href="/services/finops" class="btn">Mehr Informationen</a>
+                    {{ end }}
+                    <!-- Moved "Jetzt Anfragen" button inside the else -->
+                    <a href="/contact/us" class="btn">Jetzt Anfragen</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-4 pt-md-10 pb-4 pb-md-10">
+  <div class="row align-items-center">
+  
+    <!-- Main Service Content -->
+    <div class="col-12 col-md-8 service-single d-flex flex-column align-items-center">
+      <div class="content">{{ .Content }}</div>
+  </div>
+ 
+
+
+      <div class="col-12 col-md-6 contact-card-container">
+                {{ if eq .Site.Language.Lang "en" }}
+            {{ partial "kaiContactCardOfferingEN.html" . }}
+           {{ else }}
+              {{ partial "kaiContactCardOfferingDE.html" . }}
+               {{ end }}
+         </div>
+        
+      </div>
+    </div>
+{{ end }}
+
+
+
+{{ define "footer_js" }}
+{{ $library := resources.Get "js/libs/library.js" }}
+{{ $services := resources.Get "js/pages/services.js" }}
+{{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
+{{ if hugo.IsServer }}
+  <script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+{{ else }}
+  <script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+{{ end }}
+{{ end }}

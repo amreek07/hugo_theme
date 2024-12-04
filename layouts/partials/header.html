@@ -1,0 +1,184 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+  <style>
+    .language-switcher {
+      position: absolute;
+      right: 0px;
+      top: 0;
+      margin-right: 10px;
+    }
+
+    .language-switcher .current-flag {
+      display: inline-block;
+      cursor: pointer;
+      padding: 12px 16px;
+    }
+
+    .language-switcher .dropdown-menu {
+      display: none; /* Hidden by default */
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: white;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .language-switcher .dropdown-menu a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+    }
+
+    .language-switcher .flag-icon {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /*  maximum width of 600px */
+    @media (max-width: 600px) {
+      .language-switcher {
+        top: 5px;
+        right: 20px;
+        margin-right: 30px;
+      }
+
+      .language-switcher .dropdown-menu a {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+
+    /* between 601px and 900px */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .language-switcher {
+        top: 5px;
+        right: 10px;
+        margin-right: -20px;
+      }
+
+      .language-switcher .dropdown-menu a {
+        padding: 6px 16px;
+        font-size: 16px;
+      }
+    }
+
+    /* wider than 900px */
+    @media (min-width: 901px) {
+      .language-switcher {
+      position: absolute;
+      right: -15px;
+      top: 0px;
+      margin-right: 15px;
+    }
+      .language-switcher .dropdown-menu a {
+        padding: 8px 16px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header header-absolute">
+    <div class="container">
+      <div class="logo">
+        <a href="{{ .Site.BaseURL }}"><img alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.desktop | relURL }}" /></a>
+      </div>
+      <div class="logo-mobile">
+        <a href="{{ .Site.BaseURL }}"><img height="{{ .Site.Params.logo.mobile_height }}" alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.mobile | relURL }}" /></a>
+      </div>
+
+      <!-- Language Switcher -->
+      <div class="language-switcher">
+        <!-- Show current language flag -->
+        {{ if eq .Lang "de" }}
+          <div class="current-flag">
+            <span class="flag-icon flag-icon-de"></span>
+          </div>
+          <div class="dropdown-menu">
+            <a href="#" id="switch-to-en" class="dropdown-item">
+              <span class="flag-icon flag-icon-gb"></span> English
+            </a>
+          </div>
+        {{ else }}
+          <div class="current-flag">
+            <span class="flag-icon flag-icon-gb"></span>
+          </div>
+          <div class="dropdown-menu">
+            <a href="#" id="switch-to-de" class="dropdown-item">
+              <span class="flag-icon flag-icon-de"></span> Deutsch
+            </a>
+          </div>
+        {{ end }}
+      </div>
+
+      {{ partial "main-menu.html" . }}
+      {{ partial "hamburger.html" . }}
+      <script src="{{ "js/scripts.js" | relURL }}"></script>
+    </div>
+  </div>
+
+  <script>
+    //Logo reacts correctly with language Switching
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentLang = window.location.pathname.startsWith('/en') ? 'en' : 'de';
+    const logoLink = document.querySelector('.logo a');
+    const logoLinkMobile = document.querySelector('.logo-mobile a');
+
+    if (currentLang === 'en') {
+      logoLink.href = '/en/';
+      logoLinkMobile.href = '/en/';
+    } else {
+      logoLink.href = '/';
+      logoLinkMobile.href = '/';
+    }
+  });
+
+
+    // Toggling the dropdown menu on click
+    document.querySelector('.current-flag').addEventListener('click', function() {
+      var dropdownMenu = document.querySelector('.language-switcher .dropdown-menu');
+      dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+  
+    // Close the dropdown when clicking outside of it
+    window.addEventListener('click', function(e) {
+      var flagSwitcher = document.querySelector('.language-switcher');
+      if (!flagSwitcher.contains(e.target)) {
+        document.querySelector('.dropdown-menu').style.display = 'none';
+      }
+    });
+  
+    // Update language switcher links to retain the current page path without adding to history. Der Stack wird nicht beeinflusst. 
+    //  wenn man auf zurück drückt, wird nicht in der alten Sprachenmodus weitergeleitet, sondern zurück auf vorgerige Seite!!
+  document.addEventListener('DOMContentLoaded', function() {
+    var currentPath = window.location.pathname;
+    var enLink = document.getElementById('switch-to-en');
+    var deLink = document.getElementById('switch-to-de');
+
+    // Function to switch language without adding to history
+    function switchLanguage(newPath) {
+      history.replaceState(null, '', newPath); // Replace current history entry with the new path (new Stack history)
+      location.reload(); // Reload page to apply language switch
+    }
+
+    // Set up language switch without adding to history
+    if (enLink) {
+      enLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        switchLanguage('/en' + currentPath); // Switch to English without affecting history
+      });
+    }
+
+    if (deLink) {
+      deLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        const newPath = currentPath.startsWith('/en') ? currentPath.replace('/en', '') : currentPath;
+        switchLanguage(newPath); // Switch to German without affecting history
+      });
+    }
+  });
+</script>

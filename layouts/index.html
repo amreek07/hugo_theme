@@ -1,0 +1,172 @@
+{{ define "title" }}{{ .Site.Title }}{{ end }}
+
+{{ define "header_css" }}
+<style>
+.explore-button {
+  display: inline-block;
+  padding: 10px 10px;
+  margin-top: 4px;
+  color: rgb(58, 55, 55);
+  background-color: #fed130; 
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+  transform: scale(0.95); 
+  color: white;
+}
+/*  blog Space between articles' titles  */
+.blog-container {
+  max-width: 1330px;
+  margin: 0 auto;
+}
+</style>
+{{ end }}
+
+{{ define "body_classes" }}page-home{{ end }}
+{{ define "header_classes" }}header-transparent{{ end }}
+
+{{ define "meta_tags" }}
+<meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_description }}" />
+<meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
+<meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
+<meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
+<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
+<meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
+<meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
+<meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
+<meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
+{{ end }}
+
+{{ define "main" }}
+
+<!-- Include the contact bar partial -->
+{{ if eq .Site.Language.Lang "en" }}
+  {{ partial "contactBarEn.html" . }}
+{{ else }}
+  {{ partial "contactBar.html" . }}
+{{ end }}
+
+<!-- Example for integrating other partials -->
+{{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+
+{{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
+{{ if gt (len $services) 0 }}
+<div class="container pt-8 pb-8 pb-md-14 pt-md-14">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <h2 class="text-center mb-3">Our Portfolio</h2>
+    </div>
+    {{ range first 6 (sort $services ".Params.weight") }}
+    <div class="col-12 col-md-4 mb-1">
+      {{ .Render "summary" }}
+    </div>
+    {{ end }}
+    <div class="col-12 text-center">
+      <a class="button button-primary" href="{{ "services" | relLangURL }}">View All Services</a>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ $headless := .Site.GetPage "/homepage" }}
+{{ $reusablePages := $headless.Resources.ByType "page" }}
+{{ $reusablePages := sort $reusablePages ".Params.weight" }}
+{{ range first 1 $reusablePages }}
+<div id="home1" class="strip bg-cover bg-position-top bg-overlay" style="background-image: url('{{ .Params.background | relURL }}');">
+  <div class="container pt-17 pb-17">
+    <div class="row">
+      <div class="col-12 col-md-6 offset-md-6 text-white">
+        <h2 class="text-primary text-capitalize">{{ .Title }}</h2>
+        <p>{{ .Content }}</strong></p>
+      
+        <!-- Display content directly from "work" without language-specific logic -->
+        {{ with .Site.GetPage "work" }}
+          <div>{{ .Content }}</div>
+        {{ end }}
+      
+        <!-- Explore More Button -->
+        {{ if and .Params.buttonLabel .Params.buttonLink }}
+          <a class="explore-button" href="{{ .Params.buttonLink | relLangURL }}" style="display: inline-block; padding: 10px 10px; color: rgb(58, 55, 55); background-color: #fed130; border: none; border-radius: 5px; text-decoration: none; font-size: 1rem; text-align: center; cursor: pointer; transition: background-color 0.3s ease; margin-top: 4px;">
+            {{ .Params.buttonLabel }}
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+
+{{ $blog := where (where .Site.RegularPages "Type" "blog") ".Params.featured" true }}
+{{ if gt (len $blog) 0 }}
+<div class="container pt-8 pb-8 pb-md-14 pt-md-14 blog-container">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <h2 class="text-center mb-3">Our Blogposts</h2>
+    </div>
+    {{ range first 6 (sort $blog ".Params.weight") }}
+    <div class="col-12 col-md-4 mb-1">
+      {{ .Render "summary" }}
+    </div>
+    {{ end }}
+    <div class="col-12 text-center">
+      <a class="button button-primary" href="{{ "blog" | relLangURL }}">View All Blog Entries</a>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+<!-- Access EaPartnerWindow from the homepage directory -->
+{{ $eaPartnerWindow := $headless.Resources.GetMatch "EaPartnerWindow.md" }}
+{{ if $eaPartnerWindow }}
+<div id="eaPartnerWindow" class="strip bg-cover bg-position-top bg-overlay" style="background-image: url('{{ $eaPartnerWindow.Params.background | relURL }}');">
+  <div class="container pt-17 pb-17">
+    <div class="row">
+      <div class="col-12 col-md-6 offset-md-6 text-white">
+        <h2 class="text-primary text-capitalize">{{ $eaPartnerWindow.Title }}</h2>
+        <p>{{ $eaPartnerWindow.Content }}</p>
+
+        <!-- Display button "explore-button" -->
+        {{ if and $eaPartnerWindow.Params.buttonLabel $eaPartnerWindow.Params.buttonLink }}
+          <a class="explore-button" href="{{ $eaPartnerWindow.Params.buttonLink | relLangURL }}">{{ $eaPartnerWindow.Params.buttonLabel }}</a>
+        {{ end }}
+
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ partial "slider.html" . }}
+<div class="see-all-projects">
+  <a class="button button-primary" href="{{ "reference" | relLangURL }}">See All Projects</a>
+</div>
+
+{{ $aboutPage := $headless.Resources.GetMatch "about.md" }}
+{{ if $aboutPage }}
+<div id="home" class="strip bg-primary bg-cover bg-position-top bg-overlay"
+     style='background-image: url("{{ $aboutPage.Params.background | relURL }}");'>
+     <div class="container pt-12 pb-12 pb-md-16 pt-md-16">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 text-center text-white">
+          <h2>{{ $aboutPage.Title }}</h2>
+          <!-- Using .Content instead of .Render -->
+          {{ $aboutPage.Content }}
+          <a class="button button-white" href="{{ $aboutPage.Params.buttonLink | relLangURL }}">{{ $aboutPage.Params.button }}</a>
+        </div>
+      </div>
+  </div>
+</div>
+{{ end }}
+
+{{ end }}
+
+{{ define "footer_js" }}
+{{ end }}

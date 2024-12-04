@@ -1,0 +1,236 @@
+<style>
+    /* Base Style for Cookie Consent */
+    #cookie-notice {
+        width: 100%;
+        max-width: 600px;
+        padding: 1rem;
+        background-color: #f7f7f7;
+        color: #333;
+        position: fixed;
+        bottom: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        display: block;
+        z-index: 999;
+    }
+
+    #cookie-notice .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #cookie-notice .heading {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    #cookie-notice p,
+    #cookie-notice span {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    #cookie-notice .buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+    }
+
+    /* Base Style for Buttons */
+    #cookie-notice .buttons a {
+        padding: 0.5rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1rem;
+        color: white;
+        display: inline-block;
+        transition: background-color 0.3s;
+    }
+
+    /* Accept Button */
+    #cookie-notice-accept {
+        background-color: #28a745;
+    }
+
+    #cookie-notice-accept:hover {
+        background-color: #218838;
+    }
+
+    /* Deny Button */
+    #cookie-notice-deny {
+        background-color: #dc3545;
+    }
+
+    #cookie-notice-deny:hover {
+        background-color: #c82333;
+    }
+
+    /* More Info Button */
+    #cookie-notice-more-info {
+        background-color: #007bff;
+    }
+
+    #cookie-notice-more-info:hover {
+        background-color: #0069d9;
+    }
+
+    /* Media Queries for Different Screen Sizes */
+    
+    /* Large screens - (min-width: 901px) */
+    @media (min-width: 901px) {
+        #cookie-notice {
+            max-width: 600px;
+        }
+        #cookie-notice .buttons a {
+            font-size: 1rem;
+            padding: 0.5rem 2rem;
+        }
+    }
+
+    /* Medium screens - (max-width: 900px) */
+    @media (max-width: 900px) {
+        #cookie-notice {
+            max-width: 500px;
+        }
+        #cookie-notice .buttons a {
+            font-size: 0.9rem;
+            padding: 0.5rem 1.5rem;
+        }
+    }
+
+    /* Small screens - (min-width: 601px) and (max-width: 900px) */
+    @media (min-width: 601px) and (max-width: 900px) {
+        #cookie-notice {
+            max-width: 450px;
+        }
+        #cookie-notice .buttons a {
+            font-size: 0.85rem;
+            padding: 0.4rem 1.3rem;
+        }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 600px) {
+        #cookie-notice {
+            max-width: 300px;
+            padding: 0.8rem;
+        }
+        #cookie-notice .heading {
+            font-size: 1rem;
+        }
+        #cookie-notice p,
+        #cookie-notice span {
+            font-size: 0.9rem;
+        }
+        #cookie-notice .buttons a {
+            font-size: 0.8rem;
+            padding: 0.3rem 1rem;
+        }
+    }
+</style>
+
+<div id="cookie-notice">
+    <div class="content">
+        <span class="heading">Before you continue to forwardnow</span>
+        <span>We would like to use third-party cookies and scripts to improve the functionality of this website, including Formspree, Google Analytics, and Hotjar.</span>
+        <div class="buttons">
+            <a id="cookie-notice-accept">Approve</a>
+            <a id="cookie-notice-deny">Deny</a>
+            <a id="cookie-notice-more-info">More info</a>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function createCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split("; ");
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            if (c.indexOf(nameEQ) == 0) {
+                return c.substring(nameEQ.length, c.length);
+            }
+        }
+        return null;
+    }
+
+    // Full GTM and Hotjar Scripts
+    function loadGoogleTagManager() {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NVWCJPZX');
+    }
+
+    function loadHotjar() {
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:5181642,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    }
+
+    // Check for consent and load scripts conditionally
+    if (readCookie("cookie-notice-option") === "true") {
+        document.getElementById("cookie-notice").style.display = "none";
+
+        // Load Google Tag Manager
+        loadGoogleTagManager();
+
+        // Load Hotjar
+        loadHotjar();
+
+    } else if (readCookie("cookie-notice-option") !== "false") {
+        // Show the banner if user hasn't decided
+        document.getElementById("cookie-notice").style.display = "block";
+    } else {
+        // Hide the banner if the user denied cookies
+        document.getElementById("cookie-notice").style.display = "none";
+    }
+
+    // Event listeners for the buttons
+    document.getElementById("cookie-notice-accept").addEventListener("click", function () {
+        createCookie("cookie-notice-option", "true", 31);
+        document.getElementById("cookie-notice").style.display = "none";
+        loadGoogleTagManager();
+        loadHotjar();
+        location.reload(); // Reload to apply tracking if accepted
+    });
+
+    document.getElementById("cookie-notice-deny").addEventListener("click", function () {
+        createCookie("cookie-notice-option", "false", 31);
+        document.getElementById("cookie-notice").style.display = "none";
+        location.reload(); // Reload to remove any tracking if denied
+    });
+
+    document.getElementById("cookie-notice-more-info").addEventListener("click", function () {
+        createCookie("cookie-notice-option", "false", 31);
+        document.getElementById("cookie-notice").style.display = "none";
+        location.href = "/impressum";
+    });
+</script>
+

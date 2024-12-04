@@ -1,0 +1,101 @@
+<style>
+    .contact-card-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+    }
+    .contact-card-enhanced {
+        display: flex;
+        flex-direction: column; 
+        background-color: #F0F4F8;
+        color: #333;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        max-width: 520px;
+    }
+    .contact-image-section {
+        padding: 7px;
+        background-color: #005A9C;
+        display: flex; 
+        justify-content: center;
+    }
+    .contact-profile-image {
+        width: 173px; 
+        height: auto;
+        object-fit: cover;
+        border-radius: 55%; 
+    }
+    .contact-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        flex-grow: 1; 
+        max-height: 100%; 
+        align-items: center; 
+        text-align: center; 
+    }
+    .contact-name-title a {
+        font-size: 1.25rem;
+        color: #005A9C;
+        text-decoration: none;
+    }
+    .contact-position {
+        font-size: 1rem;
+        color: #333;
+    }
+    .contact-description {
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+    .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; 
+    }
+    .contact-actions p {
+        background-color: #007BFF;
+        color: white;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 4px;
+        margin: 0;
+    }
+    .contact-location {
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
+    .contact-logo-section {
+        text-align: center;
+        padding-top: 10px;
+    }
+    .contact-company-logo {
+        width: 20%;
+        margin-top: 10px;
+    }
+    @media (max-width: 600px) {
+        .contact-card-enhanced {
+            max-width: 100%;
+        }
+        .contact-profile-image {
+            margin: 10px 0; 
+        }
+        .contact-actions {
+            justify-content: center; 
+        }
+    }
+</style>
+
+<div class="contact-card-container">
+    <div class="contact-card-enhanced">
+        <div class="contact-image-section">
+            <img src="/images/team/KaiCropped.png" alt="Kai Herings" class="contact-profile-image">
+        </div>
+        <div class="contact-content">
+            <h2 class="contact-name-title"><a href="mailto:info@fwdnow.io" class="contact-email">Kai Herings</a></h2>
+            <p class="contact-position">Senior Consultant</p>
+            <p class="contact-description">Enterprise Architect and Management Consultant with extensive expertise in innovation management and innovation acceleration.</p>
+        </div>
+    </div>
+</div>

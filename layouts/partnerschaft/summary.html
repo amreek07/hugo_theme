@@ -1,0 +1,41 @@
+<div class="service service-summary">
+    {{ if .Params.icon }}
+    <div class="service-image">
+        <img height="80" width="80" src="{{ .Params.icon | relURL }}" alt="{{ .Title }}" />
+    </div>
+    {{ end }}
+    <div class="service-content">
+        <h2 class="service-title">
+            {{ .Title }}
+        </h2>
+        {{ if or (in .Title "Application Landscape Dashboard") (in .Title "Essential layers Portfolio") (in .Title "Dashboard der Anwendungslandschaft") }}
+            <span>{{ .Summary | safeHTML }}</span>
+        {{ else }}
+            <span>{{ .Content | truncate 220 "..." | safeHTML }}</span>
+            <a href="{{ .Permalink }}" class="read-more-button">Read More</a>
+        {{ end }}
+    </div>
+    {{ if .Params.screenshot }}
+    <div class="service-screenshot" class="screenshot-wrapper">
+        <img src="{{ .Params.screenshot | relURL }}" alt="Screenshot for {{ .Title }}" class="screenshot-image">
+    </div>
+    {{ end }}
+</div>
+
+<style>
+.service-screenshot {
+    position: absolute;
+    left: 650px;
+    top: 15px;
+    width: 450px;
+}
+
+@media (max-width: 900px) {
+    .service-screenshot {
+        position: static;
+        width: 50%;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+}
+</style>

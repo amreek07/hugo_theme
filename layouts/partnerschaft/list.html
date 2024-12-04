@@ -1,0 +1,212 @@
+{{ define "header_css" }}
+{{ partial "jetztAnfragen.html" }}
+<style>
+  .meet-architect-button {
+    background-color: #fed130;
+    color: rgb(53, 53, 53);
+    font-weight: bold;
+    border: none;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .meet-architect-button:hover {
+    transform: scale(0.95); 
+  color: white;
+  }
+  
+/* show main conten in row */
+.row {
+  display: flex;
+  flex-direction: column; /* Change from row to column */
+  justify-content: flex-start;
+  align-items: stretch; /* Ensures that each column item stretches to fit the width */
+}
+.col-12.col-md-12 {
+  max-width: 600px; 
+  width: 100%;
+  margin-bottom: 20px;
+}
+.description-container {
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd;    
+  border-radius: 5px;        
+  padding: 20px;            
+  margin: 20px 0;           
+  text-align: center;       
+  max-width: 800px;          
+  margin-left: auto;         
+  margin-right: auto;       
+}
+
+@media (max-width: 768px) {
+  .description-container {
+    padding: 15px; 
+    font-size: 14px; 
+  }
+}
+  </style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D0DPXZZZMJ"></script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D0DPXZZZMJ');
+</script>
+
+<script>
+  function gtag_report_conversion(url) {
+     var callback = function () {
+        if (typeof(url) != 'undefined') {
+           window.location = url;
+        }
+     };
+     gtag('event', 'conversion', {
+        'send_to': 'AW-16690409850/yM3OCMGb3OAZEPrizZY-',
+        'event_callback': callback
+     });
+     return false;
+  }
+  </script>
+  
+{{ end }}
+
+{{ define "body_classes" }}page-services-list{{ end }}
+{{ define "header_classes" }}header-transparent{{ end }}
+
+{{ define "main" }}
+
+
+<!-- Include the contact bar partial -->
+{{ if eq .Site.Language.Lang "en" }}
+  {{ partial "contactBarEn.html" . }}
+{{ else }}
+  {{ partial "contactBar.html" . }}
+{{ end }}
+
+<!-- Hero image and description with the button -->
+<div id="hero" class="hero-image hero-image-setheight" style="background-image: url('{{ .Params.heroBackground | relURL }}'); position: relative;">
+  <div class="container">
+    <div class="hero-text">
+      <span class="hero-section">{{ .Params.Section }}</span>
+      <h1>{{ .Params.heroHeading }}</h1>
+      <p style="display: inline-block;">{{ .Params.heroSubHeading }}</p>
+      
+      <!-- Check if the website is in English or German and display the corresponding button -->
+      {{ if eq $.Site.Language.Lang "en" }}
+        <!-- Button for English -->
+        <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
+   class="btn"
+   onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');">
+   Meet the Architects
+</a>
+      {{ else }}
+        <!-- Button for German -->
+        <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
+   class="btn"
+   onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');">
+   Architekten Treffen
+</a>
+      {{ end }}
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Remaining page content, such as a list of services -->
+<div class="container pt-6 pt-md-10">
+  <div class="row">
+    {{ if .Content }}
+    <div class="col-12">
+      <div class="page-intro">{{ .Content }}</div>
+    </div>
+    {{ end }}
+    
+    <!-- Check if the language is English -->
+{{ if eq $.Site.Language.Lang "en" }}
+
+<!-- "Application Landscape Dashboard" first -->
+{{ range .Pages.ByWeight }}
+{{ if eq .Title "Application Landscape Dashboard" }}
+<div class="col-12 col-md-12 mb-4" style="padding-bottom: 30px;">{{ .Render "summary" }}</div>
+{{ end }}
+{{ end }}
+
+<!-- "Essential layers Portfolio" second -->
+{{ range .Pages.ByWeight }}
+{{ if eq .Title "Essential layers Portfolio" }}
+<div class="col-12 col-md-12 mb-4" style="padding-bottom: 30px;">{{ .Render "summary" }}</div>
+{{ end }}
+{{ end }}
+
+<!-- "Data Capture" and "Essential Features" after -->
+{{ range .Pages.ByWeight }}
+{{ if or (eq .Title "Data Capture") (eq .Title "Essential Features") }}
+<div class="col-12 col-md-12 mb-4" style="padding-bottom: 30px;">{{ .Render "summary" }}</div>
+{{ end }}
+{{ end }}
+
+{{ else if eq $.Site.Language.Lang "de" }}
+
+<!-- "Anwendungslandschaft-Dashboard" first (German titles) -->
+{{ range .Pages.ByWeight }}
+{{ if eq .Title "Dashboard der Anwendungslandschaft" }}
+<div class="col-12 col-md-12 mb-4" style="padding-bottom: 30px;">{{ .Render "summary" }}</div>
+{{ end }}
+{{ end }}
+
+<!-- "Essential layers Portfolio" second (German titles) -->
+{{ range .Pages.ByWeight }}
+{{ if eq .Title "Essential layers Portfolio" }}
+<div class="col-12 col-md-12 mb-4" style="padding-bottom: 30px;">{{ .Render "summary" }}</div>
+{{ end }}
+{{ end }}
+
+<!-- "Datenerfassung" and "Essential Features" after (German titles) -->
+{{ range .Pages.ByWeight }}
+{{ if or (eq .Title "Datenerfassung") (eq .Title "Essential Features") }}
+<div class="col-12 col-md-12 mb-4" style="padding-bottom: 30px;">{{ .Render "summary" }}</div>
+{{ end }}
+{{ end }}
+
+{{ end }}
+    
+  </div>
+</div>
+
+<div class="description-container">
+  {{ if eq $.Site.Language.Lang "en" }}
+    <!-- English content -->
+    <p>Unlock the full potential of your enterprise architecture with a program that is not just about transformation—it is about understanding your specific needs. We will work closely with you to define your use cases, identify the perspectives that matter most, gather the essential data, and customize your repository, all guided by our expert consulting in enterprise architecture tools. Our team is here to support you every step of the way, ensuring that every decision aligns with your strategic goals and enhances your digital capabilities.</p>
+    <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
+   class="meet-architect-button"
+   onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');">
+   Meet the Architects
+</a>
+  {{ else }}
+    <!-- German content -->
+    <p>Entfalten Sie das volle Potenzial Ihrer Unternehmensarchitektur mit einem Programm, das nicht nur auf Transformation abzielt – es geht darum, Ihre spezifischen Bedürfnisse zu verstehen. Wir arbeiten eng mit Ihnen zusammen, um Ihre Anwendungsfälle zu definieren, die wichtigsten Perspektiven zu identifizieren, die erforderlichen Daten zu sammeln und Ihr Repository individuell anzupassen, alles begleitet von unserer Expertenberatung zu Unternehmensarchitektur-Tools. Unser Team unterstützt Sie auf jedem Schritt des Weges, um sicherzustellen, dass jede Entscheidung mit Ihren strategischen Zielen übereinstimmt und Ihre digitalen Fähigkeiten verbessert.</p>
+    <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
+   class="meet-architect-button"
+   onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');">
+   Architekten Treffen
+</a>
+  {{ end }}
+</div>
+
+{{ end }}
+
+
+
+{{ define "footer_js" }}
+{{ end }}

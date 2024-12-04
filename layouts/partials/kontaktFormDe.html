@@ -1,0 +1,59 @@
+<div class="content-sentence">{{ .Content }}</div>
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Vor- und Nachname:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail-Adresse:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="unternehmen">Unternehmen:</label>
+          <input type="text" id="unternehmen" name="unternehmen" placeholder="Name Ihres Unternehmens">
+        </div>
+        <div class="form-group">
+          <label for="message">Ihre  Nachricht:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Senden</button>
+      </form>
+      
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting the default way
+        
+          // Gather form data
+          const formData = new FormData(this);
+        
+          // Convert FormData to an object
+          const data = {};
+          formData.forEach((value, key) => data[key] = value);
+        
+          // Send form data to Formspree
+          fetch('https://formspree.io/f/mblrjnaj', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => {
+            if (response.ok) {
+              // Check current URL path to determine redirection
+              const currentPath = window.location.pathname;
+              let redirectUrl = '/notification/message'; 
+        
+              if (currentPath.startsWith('/en')) {
+                redirectUrl = '/en/notification/message'; 
+              }
+        
+              // Redirect to the URL in the same tab
+              window.location.href = redirectUrl;
+            } else {
+              alert('There was an issue with your submission. Please try again.');
+            }
+          })
+          .catch(error => console.error('Error:', error));
+        });
+        </script>

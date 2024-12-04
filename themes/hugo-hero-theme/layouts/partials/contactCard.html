@@ -1,0 +1,113 @@
+<style>
+    .contact-card-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+    }
+    .contact-card-enhanced {
+        display: flex;
+        background-color: #F0F4F8;
+        color: #333;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        max-width: 520px;
+    }
+    .contact-image-section {
+        padding: 10px;
+        background-color: #005A9C;
+        flex: 0 0 220px;
+    }
+    .contact-profile-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .contact-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
+    .contact-name-title a {
+        font-size: 1.25rem;
+        color: #005A9C;
+        text-decoration: none;
+    }
+    .contact-position {
+        font-size: 1rem;
+        color: #333;
+    }
+    .contact-description {
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+    .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Ensures spacing between items without pushing the phone number down */
+    }
+    .contact-actions a {
+        background-color: #007BFF;
+        color: white;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    .contact-location {
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
+    .contact-logo-section {
+        text-align: center;
+        padding-top: 10px;
+    }
+    .contact-company-logo {
+        width: 20%;
+        margin-top: 10px;
+    }
+    @media (max-width: 600px) {
+        .contact-card-enhanced {
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+        }
+        .contact-image-section {
+            width: 100%;
+            padding: 0; /* Removes padding to allow the blue background to stretch */
+            display: flex;
+            justify-content: center; /* Centers the profile image */
+        }
+        .contact-profile-image {
+            width: 150px;
+            height: 150px;
+            margin: 10px 0; /* Adds margin to separate it from the content below */
+        }
+        .contact-actions {
+            justify-content: center; /* Centers the action buttons on mobile */
+        }
+    }
+</style>
+
+<div class="contact-card-container">
+    <div class="contact-card-enhanced">
+        <div class="contact-image-section">
+            <img src="/images/team/KaiCropped.png" alt="Kai Herings" class="contact-profile-image">
+        </div>
+        <div class="contact-content">
+            <h2 class="contact-name-title"><a href="mailto:info@fwdnow.io" class="contact-email">Kai Herings</a></h2>
+            <p class="contact-position">Lead Consultant</p>
+            <p class="contact-description">Enterprise architect and management consultant with extensive expertise in innovation management and acceleration.</p>
+            <div class="contact-actions">
+                <a href="mailto:info@fwdnow.io" class="contact-email-action">Email</a>
+                <a href="https://www.linkedin.com/in/kai-herings" class="contact-linkedin-action">LinkedIn</a>
+                <a href="tel:+49 2161 5746376" class="contact-phone-action">+49 2161 5746376</a>
+                <p class="contact-location">Address: Schwogenstrasse 97, 41063 Moenchengladbach</p>
+            </div>
+            <div class="contact-logo-section">
+                <img src="/images/logoFN.png" alt="Company Logo" class="contact-company-logo">
+            </div>
+        </div>
+    </div>
+</div>

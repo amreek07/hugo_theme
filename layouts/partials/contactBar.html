@@ -1,0 +1,326 @@
+<style>
+  .contact-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    right: 0%;
+    top: 75%;
+    transform: translateY(-50%);
+    width: 0px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    background-color: transparent;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+
+  .contact-bar.expanded {
+    width: 100px;
+    top: 60%;
+    right: 21%;
+    background-color: #fed130;
+  }
+
+  .contact-bar.rueckruf-expanded {
+    width: 300px; 
+    padding: 0px; 
+    background-color: rgba(0, 0, 0, 0.1); 
+    border: 2px solid rgba(0, 0, 0, 0.1); 
+    border-radius: 0px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: width 0.3s ease, padding 0.3s ease, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease; 
+  }
+
+  .contact-bar-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(53, 53, 53);
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 120px;
+    background-color: #fed130;
+  }
+
+  .contact-bar-tab:hover {
+    transform: scale(0.95);
+    background-color: #f0f0f0;
+  }
+  /* Zeigt den expended Content wenn du Rückruf clickst */
+  .contact-bar-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
+  .contact-bar-content form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-bar-content form div {
+    margin-bottom: 10px;
+  }
+/* Design von Rückruf Eingabefeldern */
+  .contact-bar-content form input,
+  .contact-bar-content form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+/* Absenden Button design innerhalb von Rückruf Button */
+  .contact-bar-content form .green-button {
+    background-color: #fed130;
+    font-weight: bold;
+    color: rgb(53, 53, 53);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .contact-bar {
+      display: none;
+    }
+   /* umgekippte Haupt contact Button in small devices */
+    .contact-bar-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      right: -9%; 
+      top: 65%;
+      width: 130px;
+      height: 50px;
+      background-color: #fed130;
+      color: rgb(53, 53, 53);
+    font-weight: bold;
+      border: 1px solid white;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+      font-size: 16px;
+      text-align: center;
+      line-height: 50px;
+      padding: 10px;
+      transform: rotate(90deg);
+      transform-origin: center;
+      transition: all 0.3s ease; 
+    }
+    .contact-bar-button:hover {
+      background-color: #f0f0f0; 
+      transform: rotate(90deg) scale(0.95); 
+    }
+    .contact-bar.expanded {
+      display: flex;
+      width: 100px;
+      top: 65%;
+      right: 22%;
+      background-color: transparent;
+    }
+    .contact-bar.rueckruf-expanded {
+      width: 300px; 
+      padding: 0px;
+      background-color: rgba(0, 0, 0, 0.1); 
+      border: 2px solid rgba(0, 0, 0, 0.1); 
+      border-radius: 0px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      transition: width 0.3s ease, padding 0.3s ease, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease; 
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    .contact-bar {
+      display: none;
+    }
+    .contact-bar-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      right: -5%; 
+      top: 65%;
+      width: 130px;
+      height: 50px;
+      background-color: #fed130;
+      color: rgb(53, 53, 53);
+    font-weight: bold;
+      border: 1px solid white;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+      font-size: 16px;
+      text-align: center;
+      line-height: 50px;
+      padding: 10px;
+      transform: rotate(90deg);
+      transform-origin: center;
+      transition: all 0.3s ease; 
+    }
+    .contact-bar-button:hover {
+      background-color: #f0f0f0;  
+      transform: rotate(90deg) scale(0.95); 
+    }
+    .contact-bar.expanded {
+      display: flex;
+      width: 100px;
+      top: 65%;
+      right: 13%;
+      background-color: transparent;
+    }
+
+    .wrapper-slider .carousel {
+      grid-auto-columns: calc((100% / 2) - 9px);
+    }
+    .contact-bar.rueckruf-expanded {
+      width: 300px; 
+      padding: 0px; 
+      background-color: rgba(0, 0, 0, 0.1); 
+      border: 2px solid rgba(0, 0, 0, 0.1); 
+      border-radius: 0px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: width 0.3s ease, padding 0.3s ease, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+    }
+  }
+/* normal devices */
+  @media (min-width: 901px) {
+    .contact-bar {
+      top: 72%;
+      right: 4.1%;
+    }
+    .contact-bar-tab {
+      margin-bottom: 5px;
+    }
+
+    .contact-bar-tab:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-bar-tab:hover {
+      background-color: #f0f0f0; 
+      transform: scale(0.95);
+    }
+
+    .contact-bar.rueckruf-expanded {
+      width: 300px; 
+      padding: 0px; 
+      background-color: rgba(0, 0, 0, 0.1); 
+      border: 2px solid rgba(0, 0, 0, 0.1); 
+      border-radius: 0px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: width 0.3s ease, padding 0.3s ease, background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease; 
+    }
+  }
+</style>
+
+<div class="contact-bar">
+  <div class="contact-bar-tab" onclick="redirectBasedOnLanguage('/contact/us', '/en/contact/us')">
+    <i class="icon-mail"></i> Kontakt
+  </div>
+  <div class="contact-bar-tab" onclick="toggleContent('rueckruf')">
+      <i class="icon-phone"></i> Rückruf
+  </div>
+  <div id="rueckruf" class="contact-bar-content">
+      <form action="https://formspree.io/f/mblrjnaj" method="POST">
+          <div><input type="text" name="name" placeholder="Vor- und Nachname *" required></div>
+          <div><input type="text" name="company" placeholder="Unternehmen"></div>
+          <div><input type="text" name="phone" placeholder="Telefonnummer *" required></div>
+          <div><textarea name="message" placeholder="Ihre Nachricht"></textarea></div>
+          <div><button type="submit" class="green-button">Absenden</button></div>
+      </form>
+  </div>
+
+  <div class="contact-bar-tab" onclick="location.href='https://app.reclaim.ai/m/kai-fwdnow/flexible-quick-meeting'">
+      <i class="icon-calendar"></i> Termin
+  </div>
+</div>
+
+<button class="contact-bar-button" onclick="toggleContactBar()">Kontakt</button>
+
+<script>
+  function toggleContent(id) {
+    var content = document.getElementById(id);
+    var allContents = document.querySelectorAll('.contact-bar-content');
+    var contactBar = document.querySelector('.contact-bar');
+
+    allContents.forEach(function(div) {
+      if (div.id !== id) {
+        div.style.display = 'none';
+      }
+    });
+
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      contactBar.classList.remove('rueckruf-expanded');
+    } else {
+      content.style.display = "block";
+      if (id === 'rueckruf') {
+        contactBar.classList.add('rueckruf-expanded');
+      } else {
+        contactBar.classList.remove('rueckruf-expanded');
+      }
+    }
+  }
+
+  function toggleContactBar() {
+    var contactBar = document.querySelector('.contact-bar');
+    contactBar.classList.toggle('expanded');
+    contactBar.classList.remove('rueckruf-expanded');
+  }
+  
+  function redirectBasedOnLanguage(deUrl, enUrl) {
+    // Check the current URL
+    const currentUrl = window.location.pathname;
+
+    // If the URL contains '/en/', redirect to the English version
+    if (currentUrl.includes('/en/')) {
+      window.location.href = enUrl;
+    } else {
+      // Otherwise, use the German version
+      window.location.href = deUrl;
+    }
+  }
+  document.querySelector('#rueckruf form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting the default way
+        
+          // Gather form data
+          const formData = new FormData(this);
+        
+          // Convert FormData to an object
+          const data = {};
+          formData.forEach((value, key) => data[key] = value);
+        
+          // Send form data to Formspree
+          fetch('https://formspree.io/f/mblrjnaj', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => {
+            if (response.ok) {
+              // Check current URL path to determine redirection
+              const currentPath = window.location.pathname;
+              let redirectUrl = '/notification/message'; 
+        
+              if (currentPath.startsWith('/en')) {
+                redirectUrl = '/en/notification/message'; 
+              }
+        
+              // Redirect to the URL in the same tab
+              window.location.href = redirectUrl;
+            } else {
+              alert('There was an issue with your submission. Please try again.');
+            }
+          })
+          .catch(error => console.error('Error:', error));
+        });
+</script>

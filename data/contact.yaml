@@ -1,0 +1,29 @@
+email: 'info@fwdnow.io'
+phone: '+49 2161 5746376'
+businessName: 'forwardnow GmbH'
+address: |
+  Schwogenstrasse 97
+  41063 Mönchengladbach 
+
+hours:
+  - day: Monday
+    open: 8:30am
+    close: 5:00pm
+  - day: Tuesday
+    open: 8:30am
+    close: 5:00pm
+  - day: Wednesday
+    open: 8:30am
+    close: 5:00pm
+  - day: Thursday
+    open: 8:30am
+    close: 5:00pm
+  - day: Friday
+    open: 8:30am
+    close: 5:00pm
+  - day: Saturday
+    open: Closed
+    close:
+  - day: Sunday
+    open: Closed
+    close:

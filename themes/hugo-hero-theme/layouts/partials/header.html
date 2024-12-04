@@ -1,0 +1,16 @@
+<div class='header header-absolute'>
+
+  {{- template "partials/consent.html" . }}
+  <div class="container">
+    <div class="logo">
+      <a href="{{ .Site.BaseURL }}"><img alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.desktop | relURL }}" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="{{ .Site.BaseURL }}"><img height={{ .Site.Params.logo.mobile_height }} alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.mobile | relURL }}" /></a>
+    </div>
+    {{ partial "main-menu.html" . }}
+    {{ partial "hamburger.html" . }}
+    <script src="{{ "js/scripts.js" | relURL }}"></script>
+
+  </div>
+</div>

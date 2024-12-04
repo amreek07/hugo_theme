@@ -1,0 +1,169 @@
+
+<style>
+    /* Container for contact card */
+    .contact-card-container {
+        display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensures the container fills the vertical space */
+    width: 100%;
+    padding: 0px; /* Adjust spacing around the card */
+    }
+
+    /* Main contact card styling */
+    .contact-card-enhanced {
+        display: flex;
+        /* background-color: #e0f7fa;  Soft green-blue background around the picture*/
+        color: #333;
+        border-radius: none;
+        box-shadow: white;
+        overflow: hidden;
+        max-width: 520px;
+        width: 100%;
+    }
+
+    /* Image section styling */
+    .contact-image-section {
+        flex: 0 0 120px;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact-profile-image {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin: 10px;
+    }
+
+    /* Content section styling */
+    .contact-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        background-color: #ffffff;
+    }
+
+    /* Name and title styling */
+    .contact-name-title a {
+        font-size: 1.2rem;
+        color: #005A9C;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* Position styling with icon on the right */
+    .contact-position {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Pushes the icon to the right */
+    }
+    
+    .quote-icon img {
+        margin-left: 8px;
+    }
+
+    /* Quote styling */
+    .contact-description {
+        font-size: 0.9rem;
+        margin: 10px 0;
+        font-style: italic;
+        color: rgb(53, 53, 53);
+    }
+
+    /* Action buttons styling */
+    .contact-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+    .contact-actions button {
+        background-color: #fed130;
+        color: rgb(53, 53, 53);
+        font-weight: bold;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+    }
+    .contact-actions button:hover {
+        transform: scale(0.95); 
+  color: white;
+    }
+
+    /* Responsive styling */
+    @media (min-width: 901px) {
+        .contact-card-enhanced {
+            flex-direction: row;
+            max-width: 650px;
+        }
+        .contact-image-section {
+            padding: 10px;
+            flex: 0 0 120px;
+        }
+    }
+    @media (min-width: 601px) and (max-width: 900px) {
+        .contact-card-enhanced {
+            max-width: 90%;
+            flex-direction: row;
+            align-items: center;
+        }
+        .contact-profile-image {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    @media (max-width: 600px) {
+        .contact-card-enhanced {
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+        }
+        .contact-image-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .contact-profile-image {
+            width: 80px;
+            height: 80px;
+        }
+    }
+</style>
+
+<div class="contact-card-container">
+    <div class="contact-card-enhanced">
+        <!-- Profile image section -->
+        <div class="contact-image-section">
+            <img src="/images/team/kai.png" alt="Kai Herings" class="contact-profile-image">
+        </div>
+        <!-- Content section -->
+        <div class="contact-content">
+            
+            <h2 class="contact-name-title">
+                <a href="mailto:info@fwdnow.io">Kai Herings</a>
+            </h2>
+
+            <p class="contact-position">Senior consultant</p>
+
+            <p class="contact-description">
+                Optimize alignment between IT and business with expert advice and clear strategies.
+            </p>
+
+            <div class="contact-actions">
+                <a href="https://fwdnow.io/en/contact/us/" target="_blank">
+                    <button type="button">Talk to me now!</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

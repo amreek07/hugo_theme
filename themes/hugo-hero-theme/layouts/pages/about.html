@@ -1,0 +1,59 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-pages-aboutlayout{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+{{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+<style>
+
+</style>
+{{ $headless := .Site.GetPage "/pages/about" }}
+{{ $subpages := $headless.Resources.ByType "page" }}
+{{ $subpages := sort $subpages ".Params.weight" }}
+{{ range $subpages }}
+{{ if .Params.people }}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="page-about-people">
+  <div class="body" {{ if eq .Params.align "right" }}style="float: right;"{{end}}>
+<div class="frame">
+  <h2 class="text-primary text-capitalize" style="z-index:2; color: #048565 ; position: absolute;
+    bottom: 0px; ">{{ .Params.name }}</h2>  
+	<div class="picture" style="background-image:url('{{ .Params.people_image }}')"></div>
+
+		<div class="social twitter">
+			<a href="https://twitter.com/kherings" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</div>
+	
+		<div class="social linkedin">
+			<a href="https://www.linkedin.com/in/kai-herings/" target="_blank">
+				<i class="fa fa-linkedin"></i>
+			</a>
+		</div>
+</div>
+</div>
+<br style="clear: both;">
+{{ else }}
+<div class="strip bg-cover bg-position-top bg-overlay" style="
+background-image: url({{ .Params.background | relURL }});">
+  <div class="container pt-17 pb-17">
+    <div class="row">
+      <div class="col-12 col-md-6 {{ if eq .Params.align "right" }}offset-md-6{{ end }}">
+        <h2 class="text-primary text-capitalize">{{ .Title }}</h2>
+        <div class="containerNoLimit"> {{ .Content }} </div>
+        {{ if .Params.button }}
+          <a class="button" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
+        {{ end }}
+    </div>
+  </div>
+</div>
+</div>
+{{ end }}
+{{ end }}
+
+{{ .Content }}
+
+{{ end }}
