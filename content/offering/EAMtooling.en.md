@@ -29,7 +29,11 @@ With an EA repository, you create a central platform for managing your business 
 Whether it's LeanIX, AdoIT, Essential Cloud, or another tool of your choice, our experts will guide you through the implementation of your enterprise architecture software.
 
 
-![Untitled](/images/offering/Enterprise.png)
+{{< rawhtml >}}
+<img src="/images/offering/Enterprise.png" class="my-5" alt="Report Overview">
+{{< /rawhtml >}}
+
+<!-- ![Untitled](/images/offering/Enterprise.png) -->
 
 
 
@@ -46,7 +50,11 @@ Through a structured process, we quickly set your enterprise architecture on the
 </a>
 {{< /rawhtml >}} Benefit from an efficient implementation that optimizes your architecture processes immediately and delivers fast, measurable results.
 
-![Untitled](/images/offering/eam_tooling/eam_tooling_process.jpg)
+{{< rawhtml >}}
+<img src="/images/offering/eam_tooling/eam_tooling_process.jpg" class="my-5 w-100" alt="Report Overview">
+{{< /rawhtml >}}
+
+<!-- ![Untitled](/images/offering/eam_tooling/eam_tooling_process.jpg) -->
 
 * **Consulting & Tool Selection**: We analyze your needs and help you choose the best software solution.
   
@@ -77,7 +85,36 @@ Through a structured process, we quickly set your enterprise architecture on the
 
 * Integrations with other applications like Jira, CMDB, etc.
 
+{{< rawhtml >}}
+<a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
+   onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');"
+   style="text-decoration: underline; cursor: pointer;">
+   Benefit 
+</a>
+{{< /rawhtml >}}
+ from our training programs, which include:
+
+* Importing data
+
+* Overview of Your EA Software
+  
+* Creating and sharing reports
+
+* Integrations with other applications like Jira, CMDB, etc.
+
 ![Untitled](/images/offering/reports1.jpg)
+
+### Master the Different Layers of Architecture
+
+* We offer comprehensive training on all modeling layers of your enterprise architecture.
+
+* We tailor all our training programs to your specific needs.
+
+{{< rawhtml >}}
+<img src="/images/offering/reports1.jpg" class="mb-5" alt="Report Overview">
+{{< /rawhtml >}}
+
+<!-- ![Untitled](/images/offering/reports1.jpg) -->
 
 ### Master the Different Layers of Architecture
 
