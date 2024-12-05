@@ -15,12 +15,15 @@ preview: "Choosing the right enterprise architecture repository is crucial for t
 ### Optimize your architecture with the right software
 
 {{< rawhtml >}}
+<p class="italic_para">
 <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
    onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');"
    style="text-decoration: underline; cursor: pointer;">
-   We support you 
+   We support you
 </a>
-{{< /rawhtml >}} in the selection, implementation, and customization of your enterprise architecture software – enabling data-driven decision-making and efficient modeling of your business architecture.
+in the selection, implementation, and customization of your enterprise architecture software – enabling data-driven decision-making and efficient modeling of your business architecture.
+</p>
+{{< /rawhtml >}}
 
 ### Why an Enterprise Architecture Repository?
 
@@ -122,4 +125,8 @@ Through a structured process, we quickly set your enterprise architecture on the
 
 * We tailor all our training programs to your specific needs.
 
-![Untitled](/images/offering/eam_tooling/eam_tooling_training.png)
+{{< rawhtml >}}
+<img src="/images/offering/eam_tooling/eam_tooling_training.png" class="mb-5" alt="Report Overview">
+{{< /rawhtml >}}
+
+<!-- ![Untitled](/images/offering/eam_tooling/eam_tooling_training.png) -->
