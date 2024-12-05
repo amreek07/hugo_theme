@@ -30,7 +30,7 @@ Whether it's LeanIX, AdoIT, Essential Cloud, or another tool of your choice, our
 
 
 {{< rawhtml >}}
-<img src="/images/offering/Enterprise.png" class="my-5" alt="Report Overview">
+<img src="/images/offering/Enterprise.png" class="my-5 w-85 width_85" alt="Report Overview">
 {{< /rawhtml >}}
 
 <!-- ![Untitled](/images/offering/Enterprise.png) -->
@@ -49,7 +49,7 @@ Through a structured process, we quickly set your enterprise architecture on the
    {{< /rawhtml >}} Benefit from an efficient implementation that optimizes your architecture processes immediately and delivers fast, measurable results.
 
 {{< rawhtml >}}
-<img src="/images/offering/eam_tooling/eam_tooling_process.jpg" class="my-5 w-100" alt="Report Overview">
+<img src="/images/offering/eam_tooling/eam_tooling_process.jpg" class="my-2 w-85" alt="Report Overview">
 {{< /rawhtml >}}
 
 <!-- ![Untitled](/images/offering/eam_tooling/eam_tooling_process.jpg) -->
@@ -84,7 +84,7 @@ Through a structured process, we quickly set your enterprise architecture on the
 </div>
 <div class="col-6">
 
-<img src="/images/offering/reports1.jpg" alt="Report Overview">
+<img src="/images/offering/training.avif" class="w-85" alt="Report Overview">
 </div>
 </div>
 {{< /rawhtml >}}
@@ -98,7 +98,7 @@ Through a structured process, we quickly set your enterprise architecture on the
 * We tailor all our training programs to your specific needs.
 
 {{< rawhtml >}}
-<img src="/images/offering/reports1.jpg" class="mb-5" alt="Report Overview">
+<img src="/images/offering/reports1.jpg" class="mb-5 w-85" alt="Report Overview">
 {{< /rawhtml >}}
 
 <!-- ![Untitled](/images/offering/reports1.jpg) -->
@@ -110,7 +110,7 @@ Through a structured process, we quickly set your enterprise architecture on the
 * We tailor all our training programs to your specific needs.
 
 {{< rawhtml >}}
-<img src="/images/offering/eam_tooling/eam_tooling_training.png" class="mb-5 w-100" alt="Traning">
+<img src="/images/offering/eam_tooling/eam_tooling_training.png" class="mb-5 w-85" alt="Traning">
 {{< /rawhtml >}}
 
 <!-- ![Untitled](/images/offering/eam_tooling/eam_tooling_training.png) -->

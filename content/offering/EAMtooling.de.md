@@ -29,7 +29,7 @@ Ob LeanIX, AdoIT, Essential Cloud, oder ein anderes Tool ihrer Wahl: Unsere Expe
 
 
 {{< rawhtml >}}
-<img src="/images/offering/Enterprise.png" class="my-5" alt="Report Overview">
+<img src="/images/offering/Enterprise.png" class="my-5 w-85 width_85" alt="Report Overview">
 {{< /rawhtml >}}
 
 ### Unser Prozess: Erste Ergebnisse in nur 30 Tagen
@@ -41,7 +41,7 @@ Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schne
 {{< /rawhtml >}} Profitieren Sie von einer effizienten Einführung, die Ihre Architekturprozesse sofort optimiert und Ihnen schnelle, messbare Ergebnisse liefert.
 
 {{< rawhtml >}}
-<img src="/images/offering/eam_tooling/eam_tooling_process.jpg" class="my-5 w-100" alt="Report Overview">
+<img src="/images/offering/eam_tooling/eam_tooling_process.jpg" class="my-2 w-85" alt="Report Overview">
 {{< /rawhtml >}}
 <!-- ![Untitled](/images/offering/eam_tooling/eam_tooling_process.jpg) -->
 
@@ -55,25 +55,29 @@ Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schne
 
 * **Ergebnisse liefern**: Nach nur 30 Tagen erhalten Sie erste, wertvolle Einblicke.
 
-### Trainings, die Ihre Expertise fördern
-
 {{< rawhtml >}}
+<div class="row align-items-center">
+<div class="col-6">
+<h3>Trainings, die Ihre Expertise fördern</h3>
+<p>
 <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
    onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');"
    style="text-decoration: underline; cursor: pointer;">Profitieren Sie</a>
-{{< /rawhtml >}}
- von unseren Schulungsprogrammen, die Folgendes umfassen:
 
-* Daten importieren
+ von unseren Schulungsprogrammen, die Folgendes umfassen:</p>
+<ul>
+<li>Daten importieren</li>
+<li>Überblick über Ihre EA-Software</li>
+<li>Reports erstellen und zur Verfügung stellen</li>
+<li>Integrationen mit anderen Applikationen wie Jira, CMDB, etc.</li>
+</ul>
+</div>
 
-* Überblick über Ihre EA-Software
+<div class="col-6">
 
-* Reports erstellen und zur Verfügung stellen
-
-* Integrationen mit anderen Applikationen wie Jira, CMDB, etc.
-
-{{< rawhtml >}}
-<img src="/images/offering/reports1.jpg" class="my-5 w-100" alt="Report Overview">
+<img src="/images/offering/training.avif" class="w-85" alt="Report Overview">
+</div>
+</div>
 {{< /rawhtml >}}
   
 <!-- ![Untitled](/images/offering/reports1.jpg) -->
@@ -85,7 +89,7 @@ Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schne
 * Wir maßschneidern alle unsere Trainingsangebote auf Ihre spezifischen Bedürfnisse.
 
 {{< rawhtml >}}
-<img src="/images/offering/eam_tooling/eam_tooling_training.png" class="mb-5 w-100" alt="Report Overview">
+<img src="/images/offering/eam_tooling/eam_tooling_training.png" class="mb-5 w-85" alt="Report Overview">
 {{< /rawhtml >}}
 
 <!-- ![Untitled](/images/offering/eam_tooling/eam_tooling_training.png) -->
