@@ -17,9 +17,7 @@ preview: "Die Wahl des richtigen Enterprise Architektur Repositories ist entsche
  {{< rawhtml >}}
 <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
    onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');"
-   style="text-decoration: underline; cursor: pointer;">
-   Wir unterstützen Sie 
-</a>
+   style="text-decoration: underline; cursor: pointer;">Wir unterstützen Sie</a>
 {{< /rawhtml >}} bei der Auswahl, Implementierung und dem Customizing Ihrer Enterprise Architektur Software – für eine fundierte, datengestützte Entscheidungsfindung und eine effiziente Modellierung Ihrer Unternehmensarchitektur.
 
 
@@ -30,19 +28,22 @@ Mit einem EA-Repository schaffen Sie eine zentrale Plattform zur Verwaltung Ihre
 Ob LeanIX, AdoIT, Essential Cloud, oder ein anderes Tool ihrer Wahl: Unsere Experten begleiten Sie bei der Einführung ihrer enterprise architektur software. 
 
 
-![Untitled](/images/offering/Enterprise.png)
+{{< rawhtml >}}
+<img src="/images/offering/Enterprise.png" class="my-5" alt="Report Overview">
+{{< /rawhtml >}}
 
 ### Unser Prozess: Erste Ergebnisse in nur 30 Tagen
 
 Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schnell auf den richtigen Kurs. Wir begleiten Sie von der Auswahl der passenden Software bis hin zur ersten erfolgreichen Nutzung – {{< rawhtml >}}
 <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
    onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');"
-   style="text-decoration: underline; cursor: pointer;">
-  alles innerhalb von nur 30 Tagen.
-</a>
+   style="text-decoration: underline; cursor: pointer;">alles innerhalb von nur 30 Tagen.</a>
 {{< /rawhtml >}} Profitieren Sie von einer effizienten Einführung, die Ihre Architekturprozesse sofort optimiert und Ihnen schnelle, messbare Ergebnisse liefert.
 
-![Untitled](/images/offering/eam_tooling/eam_tooling_process.jpg)
+{{< rawhtml >}}
+<img src="/images/offering/eam_tooling/eam_tooling_process.jpg" class="my-5 w-100" alt="Report Overview">
+{{< /rawhtml >}}
+<!-- ![Untitled](/images/offering/eam_tooling/eam_tooling_process.jpg) -->
 
 * **Beratung & Tool-Auswahl**: Wir analysieren Ihre Bedürfnisse und helfen Ihnen bei der Auswahl der besten Softwarelösung.
 
@@ -59,9 +60,7 @@ Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schne
 {{< rawhtml >}}
 <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
    onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');"
-   style="text-decoration: underline; cursor: pointer;">
-  Profitieren Sie 
-</a>
+   style="text-decoration: underline; cursor: pointer;">Profitieren Sie</a>
 {{< /rawhtml >}}
  von unseren Schulungsprogrammen, die Folgendes umfassen:
 
@@ -72,12 +71,21 @@ Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schne
 * Reports erstellen und zur Verfügung stellen
 
 * Integrationen mit anderen Applikationen wie Jira, CMDB, etc.
+
+{{< rawhtml >}}
+<img src="/images/offering/reports1.jpg" class="my-5 w-100" alt="Report Overview">
+{{< /rawhtml >}}
   
-![Untitled](/images/offering/reports1.jpg)
+<!-- ![Untitled](/images/offering/reports1.jpg) -->
 
 ### Meistern Sie die verschiedenen Architekturschichten
 
 * Wir bieten umfassende Trainings zu allen Modellierungsschichten Ihrer Unternehmensarchitektur an.
 
 * Wir maßschneidern alle unsere Trainingsangebote auf Ihre spezifischen Bedürfnisse.
-![Untitled](/images/offering/eam_tooling/eam_tooling_training.png)
+
+{{< rawhtml >}}
+<img src="/images/offering/eam_tooling/eam_tooling_training.png" class="mb-5 w-100" alt="Report Overview">
+{{< /rawhtml >}}
+
+<!-- ![Untitled](/images/offering/eam_tooling/eam_tooling_training.png) -->

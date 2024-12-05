@@ -18,10 +18,7 @@ preview: "Choosing the right enterprise architecture repository is crucial for t
 <p class="italic_para">
 <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
    onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');"
-   style="text-decoration: underline; cursor: pointer;">
-   We support you
-</a>
-in the selection, implementation, and customization of your enterprise architecture software – enabling data-driven decision-making and efficient modeling of your business architecture.
+   style="text-decoration: underline; cursor: pointer;">We support you</a> in the selection, implementation, and customization of your enterprise architecture software – enabling data-driven decision-making and efficient modeling of your business architecture.
 </p>
 {{< /rawhtml >}}
 
@@ -48,10 +45,8 @@ Whether it's LeanIX, AdoIT, Essential Cloud, or another tool of your choice, our
 Through a structured process, we quickly set your enterprise architecture on the right track. We guide you from selecting the right software to its first successful use – {{< rawhtml >}}
 <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
    onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');"
-   style="text-decoration: underline; cursor: pointer;">
-   all within just 30 days. 
-</a>
-{{< /rawhtml >}} Benefit from an efficient implementation that optimizes your architecture processes immediately and delivers fast, measurable results.
+   style="text-decoration: underline; cursor: pointer;">all within just 30 days.</a>
+   {{< /rawhtml >}} Benefit from an efficient implementation that optimizes your architecture processes immediately and delivers fast, measurable results.
 
 {{< rawhtml >}}
 <img src="/images/offering/eam_tooling/eam_tooling_process.jpg" class="my-5 w-100" alt="Report Overview">
@@ -69,43 +64,32 @@ Through a structured process, we quickly set your enterprise architecture on the
   
 * **Delivering Results**: Within just 30 days, you will gain valuable insights.
 
-### Training Programs to Enhance Your Expertise
 
 {{< rawhtml >}}
+<div class="row align-items-center">
+<div class="col-6">
+<h3>Training Programs to Enhance Your Expertise</h3> 
+<p>
 <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
    onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');"
-   style="text-decoration: underline; cursor: pointer;">
-   Benefit 
-</a>
+   style="text-decoration: underline; cursor: pointer;">Benefit</a>
+
+ from our training programs, which include:</p>
+<ul>
+<li>Importing data</li>
+<li>Overview of Your EA Software</li>
+<li>Creating and sharing reports</li>
+<li>Integrations with other applications like Jira, CMDB, etc.</li>
+</ul>
+</div>
+<div class="col-6">
+
+<img src="/images/offering/reports1.jpg" alt="Report Overview">
+</div>
+</div>
 {{< /rawhtml >}}
- from our training programs, which include:
 
-* Importing data
-
-* Overview of Your EA Software
-  
-* Creating and sharing reports
-
-* Integrations with other applications like Jira, CMDB, etc.
-
-{{< rawhtml >}}
-<a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
-   onclick="return gtag_report_conversion('https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects');"
-   style="text-decoration: underline; cursor: pointer;">
-   Benefit 
-</a>
-{{< /rawhtml >}}
- from our training programs, which include:
-
-* Importing data
-
-* Overview of Your EA Software
-  
-* Creating and sharing reports
-
-* Integrations with other applications like Jira, CMDB, etc.
-
-![Untitled](/images/offering/reports1.jpg)
+<!-- ![Untitled](/images/offering/reports1.jpg) -->
 
 ### Master the Different Layers of Architecture
 
@@ -126,7 +110,7 @@ Through a structured process, we quickly set your enterprise architecture on the
 * We tailor all our training programs to your specific needs.
 
 {{< rawhtml >}}
-<img src="/images/offering/eam_tooling/eam_tooling_training.png" class="mb-5" alt="Report Overview">
+<img src="/images/offering/eam_tooling/eam_tooling_training.png" class="mb-5 w-100" alt="Traning">
 {{< /rawhtml >}}
 
 <!-- ![Untitled](/images/offering/eam_tooling/eam_tooling_training.png) -->
