@@ -75,9 +75,21 @@ Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schne
 
 <div class="col-6">
 
-<img src="/images/offering/training.avif" class="w-85" alt="Report Overview">
+<img src="/images/offering/Train_img.jpeg" class="w-70" alt="Report Overview">
 </div>
 </div>
+{{< /rawhtml >}}
+
+
+### Meistern Sie die verschiedenen Architekturschichten
+
+* Wir bieten umfassende Trainings zu allen Modellierungsschichten Ihrer Unternehmensarchitektur an.
+
+* Wir maßschneidern alle unsere Trainingsangebote auf Ihre spezifischen Bedürfnisse.
+
+
+{{< rawhtml >}}
+<img src="/images/offering/reports1.jpg" class="mb-5 w-85" style="width: 84%;" alt="Report Overview">
 {{< /rawhtml >}}
   
 <!-- ![Untitled](/images/offering/reports1.jpg) -->

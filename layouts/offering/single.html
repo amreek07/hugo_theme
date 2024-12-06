@@ -1,71 +1,85 @@
 {{ define "header_css" }}
 {{ partial "jetztAnfragen.html" }}
-<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0DPXZZZMJ"></script>
-<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-D0DPXZZZMJ'); </script>
-    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D0DPXZZZMJ"></script>
+<script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-D0DPXZZZMJ'); </script>
+
 <script>
-function gtag_report_conversion(url) {
-   var callback = function () {
-     if (typeof(url) != 'undefined') {
-       window.location = url;
-     }
-   };
-   gtag('event', 'conversion', {
-     'send_to': 'AW-16690409850/yM3OCMGb3OAZEPrizZY-',
-     'event_callback': callback
-   });
-   return false;
- }
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof (url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16690409850/yM3OCMGb3OAZEPrizZY-',
+            'event_callback': callback
+        });
+        return false;
+    }
 </script>
 <!-- new style added by amreek -->
 <style>
-    .banner_css{
+    .banner_css {
         width: 70%;
         margin: auto;
     }
-    .btn{
+
+    .btn {
         right: auto;
         margin-left: 0px;
         font-size: 16px;
         position: static;
     }
+
     .btn:hover {
-    transform: scale(1);
-    color: white;
-    text-decoration: none;
-}
-.margin-auto{
-    max-width: 82% !important;
-    margin: 0 auto;
-    flex: 94.666667% !important;
-    margin: auto 26px !important;
-    box-shadow: 0px 0px 10px 10px rgb(249, 246, 238);
-}
-.contact-image-section {
-    flex: 0 0 170px !important;
-}
-.contact-profile-image{
-    width: 150px !important;
-    height: 150px !important;
-}
-.contact-card-enhanced {
-    max-width: 100% !important;
-    padding: 20px;
-}
-.contact-actions a:hover {
-    text-decoration: none;
- }
-.contact-actions button:hover {
-    transform: scale(1) !important;
-    color: white;
+        transform: scale(1);
+        color: white;
+        text-decoration: none;
+    }
+
+    .margin-auto {
+        position: relative;
+        max-width: 82% !important;
+        margin: 0 auto;
+        flex: 94.666667% !important;
+        margin: auto 26px !important;
+        box-shadow: 0px 0px 10px 10px rgb(249, 246, 238);
+    }
+
+    .contact-image-section {
+        flex: 0 0 170px !important;
+    }
+
+    .contact-profile-image {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .contact-card-enhanced {
+        max-width: 100% !important;
+        padding: 20px;
+    }
+
+    .contact-actions a:hover {
+        text-decoration: none;
+    }
+
+    .contact-actions button:hover {
+        transform: scale(1) !important;
+        color: white;
+
+    }
+
+    .italic_para {
+        font-style: italic;
+    }
+
+    .width_85 {
+        width: 85% !important;
+    }
+
     
-}
-.italic_para{
-    font-style: italic;
-}
-.width_85{
-    width: 85% !important;
-}
 </style>
 <!-- new style added by amreek -->
 {{ end }}
@@ -73,71 +87,77 @@ function gtag_report_conversion(url) {
 {{ define "header_classes" }}{{ end }}
 
 {{ define "main" }}
-    <!-- Hero image and description with Jetzt anfragen button integrated directly -->
-    <div id="hero" class="hero-image hero-image-setheight" style="background-image: url('{{ .Params.heroBackground | relURL }}');">
+<!-- Hero image and description with Jetzt anfragen button integrated directly -->
+<div id="hero" class="hero-image hero-image-setheight"
+    style="background-image: url('{{ .Params.heroBackground | relURL }}');">
     <div class="container">
         <div class="hero-text text-center banner_css">
             <span class="hero-section">{{ .Params.Section }}</span>
             <h1>{{ .Params.heroHeading }}</h1>
             <p>{{ .Params.heroSubHeading }}</p>
             <!-- this is the buuton on offering page -->
-            <div class="btn-container">  
+            <div class="btn-container">
                 {{ if or (eq .File.BaseFileName "FinOps_offering.en") (eq .File.BaseFileName "FinOps_offering.de") }}
-                    {{ if eq .Site.Language.Lang "en" }}
-                        <a href="/en/contact/us" class="btn" onclick="gtag_report_conversion('/en/contact/us')">Request Now</a>
-                    {{ else }}
-                        <a href="/contact/us" class="btn" onclick="gtag_report_conversion('/contact/us')">Jetzt Anfragen</a>
-                    {{ end }}
+                {{ if eq .Site.Language.Lang "en" }}
+                <a href="/en/contact/us" class="btn" onclick="gtag_report_conversion('/en/contact/us')">Request Now</a>
                 {{ else }}
-                    {{ if eq .Site.Language.Lang "en" }}
-                        <a href="/en/contact/us" class="btn">Request Now</a>
-                    {{ else }}
-                        <a href="/contact/us" class="btn">Jetzt Anfragen</a>
-                    {{ end }}
+                <a href="/contact/us" class="btn" onclick="gtag_report_conversion('/contact/us')">Jetzt Anfragen</a>
+                {{ end }}
+                {{ else }}
+                {{ if eq .Site.Language.Lang "en" }}
+                <a href="/en/contact/us" class="btn">Request Now</a>
+                {{ else }}
+                <a href="/contact/us" class="btn">Jetzt Anfragen</a>
+                {{ end }}
                 {{ end }}
             </div>
         </div>
     </div>
 </div>
 
-    <div class="container pt-4 pt-md-6 pb-4 pb-md-6">
-        <div class="row align-items-center">
-            <!-- Main Service Content -->
-            <div class="col-12 col-md-12 service-single d-flex flex-column align-items-center mycontent">
-                <div class="content">{{ .Content }}</div>
-            </div>
-          
+<div class="container pt-4 pt-md-6 pb-4 pb-md-6 form_cont_div">
 
-            <!-- Partial Contact Card -->
-            <div class="col-12 col-md-11 col-lg-9 contact-card-container margin-auto">
-                
-                {{ if eq .Site.Language.Lang "en" }}
-                    {{ if or (eq .File.BaseFileName "EAMtooling.en") (eq .File.BaseFileName "EAconsulting.en") }}
-                        {{ partial "janContactCardEN.html" . }}
-                    {{ else if or (eq .File.BaseFileName "MeetTheArchitects.en") (eq .File.BaseFileName "FinOps_offering.en") }}
-                        {{ partial "kaiContactCardOfferingEN.html" . }}
-                    {{ end }}
-                {{ else }}
-                    {{ if or (eq .File.BaseFileName "EAMtooling.de") (eq .File.BaseFileName "EAconsulting.de") }}
-                        {{ partial "janContactCardDE.html" . }}
-                    {{ else if or (eq .File.BaseFileName "MeetTheArchitects.de") (eq .File.BaseFileName "FinOps_offering.de") }}
-                        {{ partial "kaiContactCardOfferingDE.html" . }}
-                    {{ end }}
-                {{ end }}
-            
-            </div>
+
+    <div class="row align-items-center">
+        <!-- Main Service Content -->
+        <div class="col-12 col-md-12 service-single d-flex flex-column align-items-center mycontent">
+            <div class="content">{{ .Content }}</div>
         </div>
+
+     
+        <!-- Partial Contact Card -->
+        <div class="col-12 col-md-11 col-lg-9 contact-card-container margin-auto">
+
+            {{ if eq .Site.Language.Lang "en" }}
+            {{ if or (eq .File.BaseFileName "EAMtooling.en") (eq .File.BaseFileName "EAconsulting.en") }}
+            {{ partial "janContactCardEN.html" . }}
+            {{ else if or (eq .File.BaseFileName "MeetTheArchitects.en") (eq .File.BaseFileName "FinOps_offering.en") }}
+            {{ partial "kaiContactCardOfferingEN.html" . }}
+            {{ end }}
+            {{ else }}
+            {{ if or (eq .File.BaseFileName "EAMtooling.de") (eq .File.BaseFileName "EAconsulting.de") }}
+            {{ partial "janContactCardDE.html" . }}
+            {{ else if or (eq .File.BaseFileName "MeetTheArchitects.de") (eq .File.BaseFileName "FinOps_offering.de") }}
+            {{ partial "kaiContactCardOfferingDE.html" . }}
+            {{ end }}
+            {{ end }}
+        </div>
+           
     </div>
+</div>
+
+
 {{ end }}
- 
+
 
 {{ define "footer_js" }}
 {{ $library := resources.Get "js/libs/library.js" }}
 {{ $services := resources.Get "js/pages/services.js" }}
 {{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
 {{ if hugo.IsServer }}
-  <script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+<script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
 {{ else }}
-  <script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+<script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+<script src="../../static/js/popupform.js"></script>
 {{ end }}
 {{ end }}

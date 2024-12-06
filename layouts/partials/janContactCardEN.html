@@ -160,10 +160,187 @@
             </p>
 
             <div class="contact-actions">
-                <a href="https://fwdnow.io/en/contact/us/" target="_blank">
-                    <button type="button">Talk to me now!</button>
-                </a>
+                <!-- <a href="https://fwdnow.io/en/contact/us/" target="_blank"> -->
+                    <button type="button" id="talk_to_me">Talk to me now!</button>
+                <!-- </a> -->
             </div>
         </div>
     </div>
 </div>
+
+
+<!-- <div id="popup" class="popup"> -->
+    <div class="popup-content">
+       
+
+
+            <!-- contact form pop up -->
+
+            <div class="popup_form popup" id="popup">
+                <button id="closePopup" class="close-btn">×</button>
+                <div class="heading_section">
+                    <h1 style="color: #1c3ed3;">Contact</h1>
+                    <p style="color: #fff;">Feel free to schedule an initial consultation with us at your earliest convenience.</p>
+                </div>
+                <div class="contact_form" id="form_contact">
+            
+                    <form action="https://formspree.io/f/mblrjnaj" method="POST">
+                        <div class="form-group label_input">
+                            <label for="name">Full Name:</label><br/>
+                            <input type="text" class="form-control value_field" id="name" aria-describedby="name"
+                                placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group label_input">
+                            <label for="email">Email address:</label><br/>
+                            <input type="email" class="form-control value_field" id="email" aria-describedby="emailHelp"
+                                placeholder="Email address" required>
+                        </div>
+                        <div class="form-group label_input">
+                            <label for="organization">Organization:</label><br/>
+                            <input type="text" class="form-control value_field" id="organization" placeholder="Your Organization Name" required>
+                        </div>
+                        <div class="form-group label_input">
+                            <label for="exampleFormControlTextarea1">Your Message:</label><br/>
+                            <textarea class="form-control value_field" id="exampleFormControlTextarea1" rows="8" required></textarea>
+                        </div>
+                        
+                        <button type="submit" id="" class="btn btn-primary label_input">Submit</button>
+                    </form>
+                </div>
+            
+            <!-- </div> -->
+
+        <!-- <h2>Popup Content</h2>
+        <p>This is a sliding popup from the right side.</p> -->
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const openPopupButton = document.getElementById("talk_to_me");
+            const closePopupButton = document.getElementById("closePopup");
+            const popup = document.getElementById("popup");
+
+            // Open popup
+            openPopupButton.addEventListener("click", function () {
+                popup.classList.add("active");
+            });
+
+            // Close popup
+            closePopupButton.addEventListener("click", function () {
+                popup.classList.remove("active");
+            });
+
+            // Close popup when clicking outside the popup
+            window.addEventListener("click", function (e) {
+                if (e.target === popup) {
+                    popup.classList.remove("active");
+                }
+            });
+        });
+    </script>
+    <style>
+
+#popup {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 800px;
+            height: 100vh;
+            background: #43454d;
+            /* color: #fff; */
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            /* align-items: center; */
+            z-index: 1000;
+            padding: 50px 60px;
+        }
+
+        #popup.active {
+            right: 0;
+        }
+
+        /* .popup-content {
+            text-align: center;
+        } */
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .popup_form {
+        background: #fff;
+        box-shadow: 0px 0px 10px 5px rgb(249, 246, 238);
+        position: absolute;
+        border: 1px solid #e4e4e4;
+        /* padding: 50px; */
+        /* z-index: ; */
+        /* left: -740px; */
+    }
+    .add_active{
+        margin-left: 740px !important;
+    }
+    .label_input{
+        color: #fff;
+        margin-top: 20px;
+        /* width: 100%; */
+    }
+    .value_field {
+    width: 100%;
+    height: 45px;
+    text-indent: 15px;
+    border: 1px solid;
+    border-color: #cccccc;
+    outline: none;
+}
+    </style>
+
+    <script>
+        document.querySelector('#form_contact form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the default way
+          
+            // Gather form data
+            const formData = new FormData(this);
+          
+            // Convert FormData to an object
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+          
+            // Send form data to Formspree
+            fetch('https://formspree.io/f/mblrjnaj', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            })
+            .then(response => {
+              if (response.ok) {
+                // Check current URL path to determine redirection
+                const currentPath = window.location.pathname;
+                let redirectUrl = '/notification/message'; 
+          
+                if (currentPath.startsWith('/en')) {
+                  redirectUrl = '/en/notification/message'; 
+                }
+          
+                // Redirect to the URL in the same tab
+                window.location.href = redirectUrl;
+              } else {
+                alert('There was an issue with your submission. Please try again.');
+              }
+            })
+            .catch(error => console.error('Error:', error));
+          });
+    </script>
+
+<!-- <script src="../../static/js/popupform.js"></script> -->

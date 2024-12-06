@@ -84,7 +84,7 @@ Through a structured process, we quickly set your enterprise architecture on the
 </div>
 <div class="col-6">
 
-<img src="/images/offering/training.avif" class="w-85" alt="Report Overview">
+<img src="/images/offering/Train_img.jpeg" class="w-70" alt="Report Overview">
 </div>
 </div>
 {{< /rawhtml >}}
@@ -98,7 +98,7 @@ Through a structured process, we quickly set your enterprise architecture on the
 * We tailor all our training programs to your specific needs.
 
 {{< rawhtml >}}
-<img src="/images/offering/reports1.jpg" class="mb-5 w-85" alt="Report Overview">
+<img src="/images/offering/reports1.jpg" class="mb-5 w-85" style="width: 84%;" alt="Report Overview">
 {{< /rawhtml >}}
 
 <!-- ![Untitled](/images/offering/reports1.jpg) -->
