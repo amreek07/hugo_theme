@@ -56,7 +56,7 @@ Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schne
 * **Ergebnisse liefern**: Nach nur 30 Tagen erhalten Sie erste, wertvolle Einblicke.
 
 {{< rawhtml >}}
-<div class="row align-items-center">
+<div class="row align-items-center mb-5">
 <div class="col-6">
 <h3>Trainings, die Ihre Expertise fördern</h3>
 <p>

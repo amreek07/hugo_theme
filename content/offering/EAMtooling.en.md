@@ -66,7 +66,7 @@ Through a structured process, we quickly set your enterprise architecture on the
 
 
 {{< rawhtml >}}
-<div class="row align-items-center">
+<div class="row align-items-center mb-5">
 <div class="col-6">
 <h3>Training Programs to Enhance Your Expertise</h3> 
 <p>

@@ -180,7 +180,7 @@
                 <button id="closePopup" class="close-btn">×</button>
                 <div class="heading_section">
                     <h1 style="color: #1c3ed3;">Contact</h1>
-                    <p style="color: #fff;">Feel free to schedule an initial consultation with us at your earliest convenience.</p>
+                    <p>Feel free to schedule an initial consultation with us at your earliest convenience.</p>
                 </div>
                 <div class="contact_form" id="form_contact">
             
@@ -241,13 +241,17 @@
     </script>
     <style>
 
+        .popup-content{
+            padding-bottom: 30px !important;
+        }
+
 #popup {
             position: fixed;
             top: 0;
             right: -100%;
             width: 800px;
             height: 100vh;
-            background: #43454d;
+            background: #fff;
             /* color: #fff; */
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
             transition: right 0.3s ease-in-out;
@@ -267,6 +271,9 @@
             text-align: center;
         } */
 
+        .contact_form{
+            margin-bottom: 30px;
+        }
         .close-btn {
             position: absolute;
             top: 10px;
@@ -274,7 +281,7 @@
             background: transparent;
             border: none;
             font-size: 20px;
-            color: #fff;
+            color: #000;
             cursor: pointer;
         }
         .popup_form {
@@ -290,7 +297,7 @@
         margin-left: 740px !important;
     }
     .label_input{
-        color: #fff;
+        color: #000;
         margin-top: 20px;
         /* width: 100%; */
     }
