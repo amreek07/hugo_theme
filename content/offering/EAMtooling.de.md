@@ -29,7 +29,7 @@ Ob LeanIX, AdoIT, Essential Cloud, oder ein anderes Tool ihrer Wahl: Unsere Expe
 
 
 {{< rawhtml >}}
-<img src="/images/offering/Enterprise.png" class="my-5 w-85 width_85" alt="Report Overview">
+<img src="/images/offering/Enterprise.png" class="marginImageResponsive w-85 width_85" alt="Report Overview">
 {{< /rawhtml >}}
 
 ### Unser Prozess: Erste Ergebnisse in nur 30 Tagen
@@ -57,7 +57,7 @@ Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schne
 
 {{< rawhtml >}}
 <div class="row align-items-center mb-5">
-<div class="col-6">
+<div class="col-12 col-md-12 col-lg-6">
 <h3>Trainings, die Ihre Expertise fördern</h3>
 <p>
 <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
@@ -73,9 +73,9 @@ Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schne
 </ul>
 </div>
 
-<div class="col-6">
+<div class="col-12 col-md-12 col-lg-6 responsiveMarginTop">
 
-<img src="/images/offering/Train_img.jpeg" class="w-70" alt="Report Overview">
+<img src="/images/offering/Train_img.jpeg" class="w-70 image_training" alt="Report Overview">
 </div>
 </div>
 {{< /rawhtml >}}
@@ -89,7 +89,7 @@ Durch einen strukturierten Prozess bringen wir Ihre Enterprise Architektur schne
 
 
 {{< rawhtml >}}
-<img src="/images/offering/reports1.jpg" class="mb-5 w-85" style="width: 84%;" alt="Report Overview">
+<img src="/images/offering/reports1.jpg" class="marginBottomImg w-85" alt="Report Overview">
 {{< /rawhtml >}}
   
 <!-- ![Untitled](/images/offering/reports1.jpg) -->

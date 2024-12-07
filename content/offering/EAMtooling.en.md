@@ -30,7 +30,7 @@ Whether it's LeanIX, AdoIT, Essential Cloud, or another tool of your choice, our
 
 
 {{< rawhtml >}}
-<img src="/images/offering/Enterprise.png" class="my-5 w-85 width_85" alt="Report Overview">
+<img src="/images/offering/Enterprise.png" class=" marginImageResponsive w-85 width_85" alt="Report Overview">
 {{< /rawhtml >}}
 
 <!-- ![Untitled](/images/offering/Enterprise.png) -->
@@ -67,7 +67,7 @@ Through a structured process, we quickly set your enterprise architecture on the
 
 {{< rawhtml >}}
 <div class="row align-items-center mb-5">
-<div class="col-6">
+<div class="col-12 col-md-12 col-lg-6">
 <h3>Training Programs to Enhance Your Expertise</h3> 
 <p>
 <a href="https://app.reclaim.ai/m/kai-fwdnow/meet-the-architects"
@@ -82,9 +82,9 @@ Through a structured process, we quickly set your enterprise architecture on the
 <li>Integrations with other applications like Jira, CMDB, etc.</li>
 </ul>
 </div>
-<div class="col-6">
+<div class="col-12 col-md-12 col-lg-6 responsiveMarginTop">
 
-<img src="/images/offering/Train_img.jpeg" class="w-70" alt="Report Overview">
+<img src="/images/offering/Train_img.jpeg" class="w-70 image_training" style="width: 425px; float: right; margin-top:-19px" alt="Report Overview">
 </div>
 </div>
 {{< /rawhtml >}}
@@ -98,7 +98,7 @@ Through a structured process, we quickly set your enterprise architecture on the
 * We tailor all our training programs to your specific needs.
 
 {{< rawhtml >}}
-<img src="/images/offering/reports1.jpg" class="mb-5 w-85" style="width: 84%;" alt="Report Overview">
+<img src="/images/offering/reports1.jpg" class="marginBottomImg w-85" alt="Report Overview">
 {{< /rawhtml >}}
 
 <!-- ![Untitled](/images/offering/reports1.jpg) -->

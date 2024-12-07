@@ -79,7 +79,45 @@
         width: 85% !important;
     }
 
-    
+    .image_training {
+        width: 425px !important;
+        float: right !important;
+        margin-top: -19px !important;
+    }
+
+    .marginImageResponsive {
+        margin-top: 50px !important;
+        margin-bottom: 50px !important;
+    }
+    .marginBottomImg{
+            margin-bottom: 50px;
+            width: 84%;
+        }
+
+    @media only screen and (max-width: 425px) {
+        #popup {
+            width: 400px !important;
+            padding: 40px 30px !important;
+            right: 114% !important;
+        }
+
+        #popup .active {
+            right: 0 !important;
+        }
+
+        .responsiveMarginTop {
+            margin-top: 30px;
+        }
+
+        .marginImageResponsive {
+            margin-top: 2px !important;
+            margin-bottom: 14px !important;
+        }
+        .marginBottomImg{
+            margin-bottom: 15px;
+            width: 100% !important;
+        }
+    }
 </style>
 <!-- new style added by amreek -->
 {{ end }}
@@ -115,7 +153,7 @@
     </div>
 </div>
 
-<div class="container pt-4 pt-md-6 pb-4 pb-md-6 form_cont_div">
+<div class="container py-4 py-md-6 form_cont_div">
 
 
     <div class="row align-items-center">
@@ -124,7 +162,7 @@
             <div class="content">{{ .Content }}</div>
         </div>
 
-     
+
         <!-- Partial Contact Card -->
         <div class="col-12 col-md-11 col-lg-9 contact-card-container margin-auto">
 
@@ -142,7 +180,7 @@
             {{ end }}
             {{ end }}
         </div>
-           
+
     </div>
 </div>
 
